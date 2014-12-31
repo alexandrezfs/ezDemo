@@ -1,0 +1,52 @@
+doctrine:
+    dbal:
+        connections:
+            fre_repository_connection:
+                driver: pdo_mysql
+                host: localhost
+                user: root
+                password: kazuki69
+                dbname: ez
+                charset: UTF8
+                port: '3306'
+ezpublish:
+    imagemagick:
+        enabled: false
+    repositories:
+        fre_repository:
+            engine: legacy
+            connection: fre_repository_connection
+    siteaccess:
+        default_siteaccess: fre
+        list:
+            - ez_user
+            - fre
+            - ez_admin
+        groups:
+            ezdemo_site_group:
+                - ez_user
+                - fre
+                - ez_admin
+        match:
+            URIElement: '1'
+    system:
+        ezdemo_site_group:
+            repository: fre_repository
+            languages:
+                - fre-FR
+            var_dir: var/ezdemo_site
+        fre:
+            session:
+                name: eZSESSID
+        ez_admin:
+            legacy_mode: true
+        ez_user:
+            session:
+                name: eZSESSID
+stash:
+    caches:
+        default:
+            drivers:
+                - FileSystem
+            inMemory: true
+            registerDoctrineAdapter: false
