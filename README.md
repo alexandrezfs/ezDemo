@@ -59,3 +59,8 @@ Copyright (C) 1999-2014 eZ Systems AS. All rights reserved.
 
 ## LICENSE
 http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2
+=======
+ezDemo
+======
+
+[EzPublish] This repo is used to show the dev. functionnalities of EzPublish.
